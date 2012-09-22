@@ -14,17 +14,17 @@ public class UserDaoTest {
 		
 		User user = new User();
 		user.setId("whiteship");
-		user.setName("백기선");
-		user.setPassword("married");
+		user.setName("raks");
+		user.setPassword("123123");
 
 		dao.add(user);
 			
-		System.out.println(user.getId() + " 등록 성공");
+		System.out.println("User ID is : " + user.getId());
 		
 		User user2 = dao.get(user.getId());
 		System.out.println(user2.getName());
 		System.out.println(user2.getPassword());
 			
-		System.out.println(user2.getId() + " 조회 성공");
+		System.out.println("User ID is : " + user2.getId());
 	}
 }
