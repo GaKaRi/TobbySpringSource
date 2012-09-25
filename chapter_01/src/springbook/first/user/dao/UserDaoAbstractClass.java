@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 import springbook.user.domain.User;
 
-public abstract class UserDaoThird {
+public abstract class UserDaoAbstractClass {
 	public void add(User user) throws ClassNotFoundException, SQLException {
 		Connection c = getConnection();
 		PreparedStatement ps = c.prepareStatement(
@@ -47,7 +47,7 @@ public abstract class UserDaoThird {
 	abstract protected Connection getConnection() throws ClassNotFoundException, SQLException ;
 	
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
-		UserDaoThird dao = new NUserDao();
+		UserDaoAbstractClass dao = new NUserDao();
 
 		User user = new User();
 		user.setId("whiteship");

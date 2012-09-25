@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class DUserDao extends UserDaoThird {
+public class DUserDao extends UserDaoAbstractClass {
 	protected Connection getConnection() throws ClassNotFoundException,
 			SQLException {
 		Class.forName("com.mysql.jdbc.Driver");
