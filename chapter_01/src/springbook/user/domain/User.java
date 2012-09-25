@@ -2,6 +2,7 @@ package springbook.user.domain;
 
 public class User {
 	String id;
+	String alias;
 	String name;
 	String password;
 
@@ -13,6 +14,14 @@ public class User {
 		this.id = id;
 	}
 
+	public String getAlias() {
+		return alias;
+	}
+
+	public void setAlias(String alias) {
+		this.alias = alias;
+	}
+	
 	public String getName() {
 		return name;
 	}
