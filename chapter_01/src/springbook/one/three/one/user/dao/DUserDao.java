@@ -1,10 +1,10 @@
-package springbook.first.user.dao;
+package springbook.one.three.one.user.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class DUserDao extends UserDaoAbstractClass {
+public class DUserDao extends UserDao {
 	protected Connection getConnection() throws ClassNotFoundException,
 			SQLException {
 		Class.forName("com.mysql.jdbc.Driver");
