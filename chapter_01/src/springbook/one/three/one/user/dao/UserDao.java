@@ -54,18 +54,18 @@ public abstract class UserDao {
 
 		User user = new User();
 		user.setId("whiteship");
-		user.setName("��⼱");
+		user.setName("raks");
 		user.setPassword("married");
 
 		dao.add(user);
 			
-		System.out.println(user.getId() + " ��� ����");
+		System.out.println("User ID : " + user.getId());
 		
 		User user2 = dao.get(user.getId());
 		System.out.println(user2.getName());
 		System.out.println(user2.getPassword());
 			
-		System.out.println(user2.getId() + " ��ȸ ����");
+		System.out.println("User ID2 : " + user2.getId());
 	}
 
 }
