@@ -9,7 +9,7 @@ public class DConnectionMaker implements ConnectionMaker {
 			SQLException {
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection c = DriverManager.getConnection(
-				"jdbc:mysql://localhost/springbook?characterEncoding=UTF-8", "spring", "book");
+				"jdbc:mysql://localhost:3306/springbook?characterEncoding=UTF-8", "spring", "123qwe");
 		return c;
 	}
 }
