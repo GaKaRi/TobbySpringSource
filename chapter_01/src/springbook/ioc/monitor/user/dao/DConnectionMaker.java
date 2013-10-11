@@ -1,4 +1,4 @@
-package springbook.one.six.four.user.dao;
+package springbook.ioc.monitor.user.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
