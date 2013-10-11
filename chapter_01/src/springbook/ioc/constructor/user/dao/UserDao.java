@@ -1,6 +1,7 @@
-package springbook.one.six.four.user.dao;
+package springbook.ioc.constructor.user.dao;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,10 +19,11 @@ public class UserDao {
 		Connection c = this.connectionMaker.makeConnection();
 
 		PreparedStatement ps = c.prepareStatement(
-			"insert into users(id, name, password) values(?,?,?)");
+			"insert into users(id, alias, name, password) values(?, ?,?,?)");
 		ps.setString(1, user.getId());
-		ps.setString(2, user.getName());
-		ps.setString(3, user.getPassword());
+		ps.setString(2, user.getAlias());
+		ps.setString(3, user.getName());
+		ps.setString(4, user.getPassword());
 
 		ps.executeUpdate();
 
@@ -39,6 +41,7 @@ public class UserDao {
 		rs.next();
 		User user = new User();
 		user.setId(rs.getString("id"));
+		user.setAlias(rs.getString("alias"));
 		user.setName(rs.getString("name"));
 		user.setPassword(rs.getString("password"));
 

@@ -1,4 +1,4 @@
-package springbook.one.six.four.user.dao;
+package springbook.user.dao.extend;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,15 +7,15 @@ import java.sql.SQLException;
 
 import springbook.user.domain.User;
 
-public class UserDao {
-	private ConnectionMaker connectionMaker;
+public abstract class UserDao {
+	private SimpleConnectionMaker simpleConnectionMaker;
 	
-	public UserDao(ConnectionMaker simpleConnectionMaker) {
-		this.connectionMaker = simpleConnectionMaker;
+	public UserDao() {
+		this.simpleConnectionMaker = new SimpleConnectionMaker();
 	}
 
 	public void add(User user) throws ClassNotFoundException, SQLException {
-		Connection c = this.connectionMaker.makeConnection();
+		Connection c = this.simpleConnectionMaker.getConnection();
 
 		PreparedStatement ps = c.prepareStatement(
 			"insert into users(id, name, password) values(?,?,?)");
@@ -30,7 +30,7 @@ public class UserDao {
 	}
 
 	public User get(String id) throws ClassNotFoundException, SQLException {
-		Connection c = this.connectionMaker.makeConnection();
+		Connection c = this.simpleConnectionMaker.getConnection();
 		PreparedStatement ps = c
 				.prepareStatement("select * from users where id = ?");
 		ps.setString(1, id);
@@ -49,6 +49,23 @@ public class UserDao {
 		return user;
 	}
 
-	
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		UserDao dao = new NUserDao();
+
+		User user = new User();
+		user.setId("whiteship");
+		user.setName("raks");
+		user.setPassword("married");
+
+		dao.add(user);
+			
+		System.out.println("User ID : " + user.getId());
+		
+		User user2 = dao.get(user.getId());
+		System.out.println(user2.getName());
+		System.out.println(user2.getPassword());
+			
+		System.out.println("User ID2 : " + user2.getId());
+	}
 
 }

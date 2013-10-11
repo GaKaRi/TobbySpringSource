@@ -1,11 +1,11 @@
-package springbook.one.six.four.user.dao;
+package springbook.user.dao.factory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import springbook.user.domain.User;
+import springbook.user.domain.User; 
 
 public class UserDao {
 	private ConnectionMaker connectionMaker;
