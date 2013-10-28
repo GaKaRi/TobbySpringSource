@@ -1,4 +1,4 @@
-package springbook.user.dao;
+package springbook.two.five.user.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
