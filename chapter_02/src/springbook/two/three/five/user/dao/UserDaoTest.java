@@ -1,4 +1,4 @@
-package springbook.user.dao;
+package springbook.two.three.five.user.dao;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -25,9 +25,9 @@ public class UserDaoTest {
 		ApplicationContext context = new GenericXmlApplicationContext("applicationContext.xml");
 		this.dao = context.getBean("userDao", UserDao.class);
 		
-		this.user1 = new User("gyumee", "박성철", "springno1");
-		this.user2 = new User("leegw700", "이길원", "springno2");
-		this.user3 = new User("bumjin", "박범진", "springno3");
+		this.user1 = new User("gyumee", "no1", "springno1");
+		this.user2 = new User("leegw700", "no2", "springno2");
+		this.user3 = new User("bumjin", "no3", "springno3");
 
 	}
 	

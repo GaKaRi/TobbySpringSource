@@ -1,11 +1,9 @@
-package springbook.user.dao;
+package springbook.two.four.one.user.dao;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 import java.sql.SQLException;
-
-import javax.sql.DataSource;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -34,9 +32,9 @@ public class UserDaoTest {
 	public void setUp() {
 		this.dao = this.context.getBean("userDao", UserDao.class);
 		
-		this.user1 = new User("gyumee", "박성철", "springno1");
-		this.user2 = new User("leegw700", "이길원", "springno2");
-		this.user3 = new User("bumjin", "박범진", "springno3");
+		this.user1 = new User("gyumee", "no1", "springno1");
+		this.user2 = new User("leegw700", "no2", "springno2");
+		this.user3 = new User("bumjin", "no3", "springno3");
 
 	}
 	

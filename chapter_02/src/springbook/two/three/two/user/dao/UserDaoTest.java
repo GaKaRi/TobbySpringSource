@@ -1,4 +1,4 @@
-package springbook.user.dao;
+package springbook.two.three.two.user.dao;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -6,7 +6,6 @@ import static org.junit.Assert.assertThat;
 import java.sql.SQLException;
 
 import org.junit.Test;
-import org.junit.runner.JUnitCore;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
@@ -24,7 +23,7 @@ public class UserDaoTest {
 		
 		User user = new User();
 		user.setId("gyumee");
-		user.setName("¹Ú¼ºÃ¶");
+		user.setName("no1");
 		user.setPassword("springno1");
 
 		dao.add(user);
