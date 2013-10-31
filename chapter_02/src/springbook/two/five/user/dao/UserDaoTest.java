@@ -19,7 +19,7 @@ import springbook.user.domain.User;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations="/test-applicationContext.xml")
-@DirtiesContext
+@DirtiesContext // 테스트 메소드에서 애플리케이션 컨텍스트의 구성이나 상태를 변경한다는 것을 테스트 컨텍스트 프레임워크에 알려준다.
 public class UserDaoTest {
 	@Autowired
 	ApplicationContext context;
@@ -41,7 +41,7 @@ public class UserDaoTest {
 	}
 	
 	@Test 
-	public void andAndGet() throws SQLException {		
+	public void addAndGet() throws SQLException {		
 		dao.deleteAll();
 		assertThat(dao.getCount(), is(0));
 

@@ -16,8 +16,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import springbook.user.domain.User;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations="/applicationContext.xml")
+@RunWith(SpringJUnit4ClassRunner.class) // spring TestContext Framework
+@ContextConfiguration(locations="/applicationContext.xml") // 테스트 컨텍스트가 자동으로 만들어줄 애플리케이션 컨텍스트의 위치 지정
 public class UserDaoTest {
 	@Autowired
 	ApplicationContext context;
@@ -39,7 +39,7 @@ public class UserDaoTest {
 	}
 	
 	@Test 
-	public void andAndGet() throws SQLException {		
+	public void addAndGet() throws SQLException {		
 		dao.deleteAll();
 		assertThat(dao.getCount(), is(0));
 

@@ -1,16 +1,16 @@
 package springbook.user.domain;
 
 public class User {
-	String id;
+	int id;
 	String alias;
 	String name;
 	String password;
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

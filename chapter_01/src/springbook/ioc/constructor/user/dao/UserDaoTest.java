@@ -20,7 +20,7 @@ public class UserDaoTest {
 			
 		System.out.println("User ID : " + user.getAlias());
 		
-		User user2 = dao.get(user.getAlias());
+		User user2 = dao.get(1);
 		System.out.println(user2.getName());
 		System.out.println(user2.getAlias());
 		System.out.println(user2.getPassword());

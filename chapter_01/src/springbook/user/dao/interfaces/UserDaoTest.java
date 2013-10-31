@@ -10,15 +10,15 @@ public class UserDaoTest {
 		UserDao dao = new UserDao(connectionMaker);
 
 		User user = new User();
-		user.setId("whiteship");
 		user.setName("raks");
 		user.setPassword("notmarried");
+		user.setAlias("vvv");
 
 		dao.add(user);
 			
 		System.out.println("User ID : " + user.getId());
 		
-		User user2 = dao.get(user.getId());
+		User user2 = dao.get(1);
 		System.out.println(user2.getName());
 		System.out.println(user2.getPassword());
 			
