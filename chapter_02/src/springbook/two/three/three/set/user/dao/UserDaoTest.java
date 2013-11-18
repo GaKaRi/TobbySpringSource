@@ -14,7 +14,7 @@ import springbook.user.domain.User;
 public class UserDaoTest {
 	
 	@Test 
-	public void andAndGet() throws SQLException {
+	public void addAndGet() throws SQLException {
 		ApplicationContext context = new GenericXmlApplicationContext("applicationContext.xml");
 		UserDao dao = context.getBean("userDao", UserDao.class);
 
