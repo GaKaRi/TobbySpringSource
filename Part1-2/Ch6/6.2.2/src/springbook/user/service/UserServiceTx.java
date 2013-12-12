@@ -10,8 +10,7 @@ public class UserServiceTx implements UserService {
 	UserService userService;
 	PlatformTransactionManager transactionManager;
 
-	public void setTransactionManager(
-			PlatformTransactionManager transactionManager) {
+	public void setTransactionManager(PlatformTransactionManager transactionManager) {
 		this.transactionManager = transactionManager;
 	}
 
@@ -24,14 +23,13 @@ public class UserServiceTx implements UserService {
 	}
 
 	public void upgradeLevels() {
-		TransactionStatus status = this.transactionManager
-				.getTransaction(new DefaultTransactionDefinition());
+		TransactionStatus status = this.transactionManager.getTransaction(new DefaultTransactionDefinition());
+		
 		try {
-
 			userService.upgradeLevels();
-
 			this.transactionManager.commit(status);
-		} catch (RuntimeException e) {
+		}
+		catch (RuntimeException e) {
 			this.transactionManager.rollback(status);
 			throw e;
 		}
