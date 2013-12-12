@@ -22,5 +22,6 @@
 	<classpathentry kind="lib" path="/TobyPart2/lib/org.springframework.jdbc-3.0.3.RELEASE.jar" sourcepath="D:/sts232/spring-framework-3.0.3.RELEASE/src/org.springframework.jdbc-sources-3.0.3.RELEASE.jar"/>
 	<classpathentry kind="lib" path="/TobyPart2/lib/org.springframework.test-3.0.3.RELEASE.jar"/>
 	<classpathentry kind="lib" path="/TobyPart2/lib/org.springframework.transaction-3.0.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/TobyPart2/lib/org.springframework.oxm-3.0.3.RELEASE.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
