@@ -43,15 +43,13 @@ public class UserServiceTest {
 
 	@Before
 	public void setUp() {
-		users = Arrays.asList(new User("bumjin", "박범진", "p1", "user1@ksug.org",
-				Level.BASIC, MIN_LOGCOUNT_FOR_SILVER - 1, 0), new User(
-				"joytouch", "강명성", "p2", "user2@ksug.org", Level.BASIC,
-				MIN_LOGCOUNT_FOR_SILVER, 0),
-				new User("erwins", "신승한", "p3", "user3@ksug.org", Level.SILVER,
-						60, MIN_RECCOMEND_FOR_GOLD - 1), new User("madnite1",
-						"이상호", "p4", "user4@ksug.org", Level.SILVER, 60,
-						MIN_RECCOMEND_FOR_GOLD), new User("green", "오민규", "p5",
-						"user5@ksug.org", Level.GOLD, 100, Integer.MAX_VALUE));
+		users = Arrays.asList(
+			new User("bumjin", "박범진", "p1", "user1@ksug.org", Level.BASIC, MIN_LOGCOUNT_FOR_SILVER - 1, 0),
+			new User("joytouch", "강명성", "p2", "user2@ksug.org", Level.BASIC, MIN_LOGCOUNT_FOR_SILVER, 0),
+			new User("erwins", "신승한", "p3", "user3@ksug.org", Level.SILVER, 60, MIN_RECCOMEND_FOR_GOLD - 1),
+			new User("madnite1", "이상호", "p4", "user4@ksug.org", Level.SILVER, 60, MIN_RECCOMEND_FOR_GOLD),
+			new User("green", "오민규", "p5", "user5@ksug.org", Level.GOLD, 100, Integer.MAX_VALUE)
+		);
 	}
 
 	@Test
@@ -77,8 +75,7 @@ public class UserServiceTest {
 		assertThat(request.get(1), is(users.get(3).getEmail()));
 	}
 
-	private void checkUserAndLevel(User updated, String expectedId,
-			Level expectedLevel) {
+	private void checkUserAndLevel(User updated, String expectedId, Level expectedLevel) {
 		assertThat(updated.getId(), is(expectedId));
 		assertThat(updated.getLevel(), is(expectedLevel));
 	}
@@ -137,9 +134,11 @@ public class UserServiceTest {
 
 	private void checkLevelUpgraded(User user, boolean upgraded) {
 		User userUpdate = userDao.get(user.getId());
+		
 		if (upgraded) {
 			assertThat(userUpdate.getLevel(), is(user.getLevel().nextLevel()));
-		} else {
+		}
+		else {
 			assertThat(userUpdate.getLevel(), is(user.getLevel()));
 		}
 	}
@@ -164,8 +163,7 @@ public class UserServiceTest {
 
 	@Test
 	public void upgradeAllOrNothing() {
-		TestUserService testUserService = new TestUserService(users.get(3)
-				.getId());
+		TestUserService testUserService = new TestUserService(users.get(3).getId());
 		testUserService.setUserDao(userDao);
 		testUserService.setMailSender(mailSender);
 
@@ -174,13 +172,15 @@ public class UserServiceTest {
 		txUserService.setUserService(testUserService);
 
 		userDao.deleteAll();
-		for (User user : users)
+		for (User user : users) {
 			userDao.add(user);
+		}
 
 		try {
 			txUserService.upgradeLevels();
 			fail("TestUserServiceException expected");
-		} catch (TestUserServiceException e) {
+		}
+		catch (TestUserServiceException e) {
 		}
 
 		checkLevelUpgraded(users.get(1), false);
