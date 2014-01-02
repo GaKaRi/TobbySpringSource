@@ -59,8 +59,7 @@ public class PointcutExpressionTest {
 	@Test
 	public void methodSignaturePointcut() throws SecurityException, NoSuchMethodException {
 		AspectJExpressionPointcut pointcut = new AspectJExpressionPointcut();
-		pointcut.setExpression(
-				"execution(* minus(int,int))");
+		pointcut.setExpression("execution(* minus(int,int))");
 		
 		assertThat(pointcut.getClassFilter().matches(Target.class) &&
 				   pointcut.getMethodMatcher().matches(

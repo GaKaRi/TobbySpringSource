@@ -22,8 +22,7 @@ public class JaxbTest {
 		String contextPath = Sqlmap.class.getPackage().getName(); 
 		JAXBContext context = JAXBContext.newInstance(contextPath);
 		Unmarshaller unmarshaller = context.createUnmarshaller();
-		Sqlmap sqlmap = (Sqlmap) unmarshaller.unmarshal(
-				getClass().getResourceAsStream("sqlmap.xml"));
+		Sqlmap sqlmap = (Sqlmap) unmarshaller.unmarshal(getClass().getResourceAsStream("sqlmap.xml"));
 		
 		List<SqlType> sqlList = sqlmap.getSql();
 
