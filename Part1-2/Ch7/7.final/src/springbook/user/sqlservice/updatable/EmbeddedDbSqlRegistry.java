@@ -35,14 +35,14 @@ public class EmbeddedDbSqlRegistry implements UpdatableSqlRegistry {
 			return jdbc.queryForObject("select sql_ from sqlmap where key_ = ?", String.class, key);
 		}
 		catch(EmptyResultDataAccessException e) {
-			throw new SqlNotFoundException(key + "¿¡ ÇØ´çÇÏ´Â SQLÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù", e);
+			throw new SqlNotFoundException(key + "ì— í•´ë‹¹í•˜ëŠ” SQLì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤", e);
 		}
 	}
 
 	public void updateSql(String key, String sql) throws SqlUpdateFailureException {
 		int affected = jdbc.update("update sqlmap set sql_ = ? where key_ = ?" , sql, key);
 		if (affected == 0) {
-			throw new SqlUpdateFailureException(key + "¿¡ ÇØ´çÇÏ´Â SQLÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù");
+			throw new SqlUpdateFailureException(key + "ì— í•´ë‹¹í•˜ëŠ” SQLì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤");
 		}
 	}
 
