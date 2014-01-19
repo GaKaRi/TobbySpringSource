@@ -12,10 +12,10 @@ public interface GenericDao<T> {
 	T get(int id);
 
 	List<T> search(String name);
-	
+
 	int deleteAll();
 
 	List<T> getAll();
-	
+
 	long count();
 }
