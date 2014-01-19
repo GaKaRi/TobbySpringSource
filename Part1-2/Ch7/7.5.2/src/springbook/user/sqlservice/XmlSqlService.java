@@ -46,7 +46,7 @@ public class XmlSqlService implements SqlService, SqlRegistry, SqlReader {
 	public String findSql(String key) throws SqlNotFoundException {
 		String sql = sqlMap.get(key);
 		if (sql == null)  
-			throw new SqlRetrievalFailureException(key + "¸¦ ÀÌ¿ëÇØ¼­ SQLÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù");
+			throw new SqlRetrievalFailureException(key + "ì— ëŒ€í•œ SQLì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 		else
 			return sql;
 
