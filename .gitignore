@@ -25,6 +25,7 @@ target/
 # PDT-specific
 .buildpath
 
+*.iml
 
 #################
 ## Visual Studio
