@@ -26,6 +26,7 @@ target/
 .buildpath
 
 *.iml
+.idea
 
 #################
 ## Visual Studio
